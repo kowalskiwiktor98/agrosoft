@@ -1,12 +1,13 @@
 
 document.getElementById("loginbtn").onclick = zaloguj;
 
+var accessToken;
+var tokenType;
 
 async function zaloguj() {
     const username = document.getElementById('login').value;
     const password = document.getElementById('password').value;
-    var accessToken;
-    var tokenType;
+
     try {
         console.log(username);
         console.log(password);
@@ -29,3 +30,6 @@ async function zaloguj() {
 
 }
 
+function getToken() {
+    return accessToken;
+}
