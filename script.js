@@ -20,6 +20,9 @@ async function zaloguj() {
         tokenType = response.data.tokenType;
         console.log(accessToken);
         console.log(tokenType);
+
+        localStorage.setItem('token', accessToken);
+        localStorage.setItem('tokenType', tokenType);
         window.location.pathname = 'main.html';
 
     } catch (e) {

@@ -16,13 +16,18 @@
 } */
 async function getUsers() {
     console.log("getUsers");
+    console.log(localStorage.getItem('token'));
     var config = {
-        headers: { 'Authorization': "bearer " + getToken() }
+        headers: { 'Authorization': "bearer " + localStorage.getItem('token') }
     };
+
+    var bodyParameters = {
+        key: "value"
+    }
 
     axios.post(
         'http://mikey.ovh:8080/restAPI/api/users',
-        null,
+        bodyParameters,
         config
     ).then((response) => {
         console.log(response)
