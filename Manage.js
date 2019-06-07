@@ -12,5 +12,8 @@ async function getUsers() {
 
     $.ajax(settings).done(function (response) {
         console.log(response);
+        localStorage.setItem('users', response);
+        //localStorage.setItem('users', response);
     });
+
 }
