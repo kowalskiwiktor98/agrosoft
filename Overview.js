@@ -1,8 +1,13 @@
+window.onload = function () {
+    getOverview();
+};
+
 async function getOverview() {
     getSilos();
     getFields();
     getMachines();
     displayAll();
+    prepareButtons();
 }
 
 async function getSilos() {
@@ -83,19 +88,19 @@ function displayAll() {
         silosList.appendChild(t);
     }
 }
+function prepareButtons() {
+    document.getElementById("addSilo").onclick = function () { addSilo() };
+    document.getElementById("editSilo").onclick = function () { editSilo() };
+    document.getElementById("deleteSilo").onclick = function () { deleteSilo() };
 
-document.getElementById("addSilo").onclick = function () { addSilo() };
-document.getElementById("editSilo").onclick = function () { editSilo() };
-document.getElementById("deleteSilo").onclick = function () { deleteSilo() };
+    document.getElementById("addField").onclick = function () { addField() };
+    document.getElementById("editField").onclick = function () { editField() };
+    document.getElementById("deleteField").onclick = function () { deleteField() };
 
-document.getElementById("addField").onclick = function () { addField() };
-document.getElementById("editField").onclick = function () { editField() };
-document.getElementById("deleteField").onclick = function () { deleteField() };
-
-document.getElementById("addMachine").onclick = function () { addMachine() };
-document.getElementById("editMachine").onclick = function () { editMachine() };
-document.getElementById("deleteMachine").onclick = function () { deleteMachine() };
-
+    document.getElementById("addMachine").onclick = function () { addMachine() };
+    document.getElementById("editMachine").onclick = function () { editMachine() };
+    document.getElementById("deleteMachine").onclick = function () { deleteMachine() };
+}
 function addSilo() { }
 function editSilo() { }
 function deleteSilo() { }
