@@ -11,7 +11,7 @@ async function zaloguj() {
     try {
         console.log(username);
         console.log(password);
-        const response = await axios.post('http://mikey.ovh:8080/restAPI/api/auth/signin', {
+        const response = await axios.post('https://mikey.ovh/restAPI/api/auth/signin', {
             username,
             password
         });

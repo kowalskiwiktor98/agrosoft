@@ -14,7 +14,7 @@ async function getSilos() {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://mikey.ovh:8080/restAPI/api/silos",
+        "url": "https://mikey.ovh/restAPI/api/silos",
         "method": "GET",
         "headers": {
             "Authorization": "Bearer " + localStorage.getItem('token')
@@ -31,7 +31,7 @@ async function getFields() {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://mikey.ovh:8080/restAPI/api/fields",
+        "url": "https://mikey.ovh/restAPI/api/fields",
         "method": "GET",
         "headers": {
             "Authorization": "Bearer " + localStorage.getItem('token')
@@ -48,7 +48,7 @@ async function getMachines() {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://mikey.ovh:8080/restAPI/api/machines",
+        "url": "https://mikey.ovh/restAPI/api/machines",
         "method": "GET",
         "headers": {
             "Authorization": "Bearer " + localStorage.getItem('token')
