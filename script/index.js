@@ -32,7 +32,3 @@ async function zaloguj() {
 
 
 }
-
-function getToken() {
-    return accessToken;
-}
