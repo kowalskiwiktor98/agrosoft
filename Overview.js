@@ -83,3 +83,25 @@ function displayAll() {
         silosList.appendChild(t);
     }
 }
+
+document.getElementById("addSilo").onclick = function () { addSilo() };
+document.getElementById("editSilo").onclick = function () { editSilo() };
+document.getElementById("deleteSilo").onclick = function () { deleteSilo() };
+
+document.getElementById("addField").onclick = function () { addField() };
+document.getElementById("editField").onclick = function () { editField() };
+document.getElementById("deleteField").onclick = function () { deleteField() };
+
+document.getElementById("addMachine").onclick = function () { addMachine() };
+document.getElementById("editMachine").onclick = function () { editMachine() };
+document.getElementById("deleteMachine").onclick = function () { deleteMachine() };
+
+function addSilo() { }
+function editSilo() { }
+function deleteSilo() { }
+function addField() { }
+function editField() { }
+function deleteField() { }
+function addMachine() { }
+function editMachine() { }
+function deleteMachine() { }
