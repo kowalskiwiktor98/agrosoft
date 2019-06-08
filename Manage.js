@@ -28,26 +28,26 @@ function displayUsers() {
         var li = document.createElement("li");
         var t = document.createTextNode(user.first_name + ' ' + user.last_name);
         li.appendChild(t);
-        //#region button edit
-        var btn = document.createElement("BUTTON");
-        btn.innerHTML = "Edytuj";
-        btn.setAttribute("id", user.user_id)
-        btn.onclick = function () {
-            console.log("Edit user " + this.id);
-            editUser(this.id)
-        }
-        li.appendChild(btn);
-        //#endregion
-        //#region button delete
-        var btn = document.createElement("BUTTON");
-        btn.innerHTML = "Usuń";
-        btn.setAttribute("id", user.user_id)
-        btn.onclick = function () {
-            console.log("Delete user " + this.id);
-            deleteUser(this.id)
-        }
-        li.appendChild(btn);
-        //#endregion
+        // //#region button edit
+        // var btn = document.createElement("BUTTON");
+        // btn.innerHTML = "Edytuj";
+        // btn.setAttribute("id", user.user_id)
+        // btn.onclick = function () {
+        //     console.log("Edit user " + this.id);
+        //     editUser(this.id)
+        // }
+        // li.appendChild(btn);
+        // //#endregion
+        // //#region button delete
+        // var btn = document.createElement("BUTTON");
+        // btn.innerHTML = "Usuń";
+        // btn.setAttribute("id", user.user_id)
+        // btn.onclick = function () {
+        //     console.log("Delete user " + this.id);
+        //     deleteUser(this.id)
+        // }
+        // li.appendChild(btn);
+        // //#endregion
         document.getElementById("userList").appendChild(li);
 
     }
@@ -61,4 +61,10 @@ function displayUsers() {
     function addUser() {
         console.log("Add user");
     }
+}
+
+document.getElementById("addUser").onclick = function () { addUser() };
+
+function addUser() {
+    console.log("addUser");
 }
