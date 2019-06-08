@@ -8,29 +8,48 @@
 
 <body onload="getOverview()"></body>
 
+<head>
+    <style>
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
 <ul>
     <li><a class="active" href="main.html">Strona Główna</a></li>
 </ul>
 
 <body>
+    <script type="text/javascript" src="Overview.js"></script>
     <h1>Podgląd</h1>
 
     <ul id="silos">
         <h3>Silosy</h3>
-        <button id="addSilo">Dodaj</button>
-        <button id="editSilo">Edytuj</button>
-        <button id="deleteSilo">Usuń</button>
+        <button id="addSilo" class="button">Dodaj</button>
+        <button id="editSilo" class="button">Edytuj</button>
+        <button id="deleteSilo" class="button">Usuń</button>
     </ul>
     <ul id="fields">
         <h3>Pola</h3>
-        <button id="addField">Dodaj</button>
-        <button id="editField">Edytuj</button>
-        <button id="deleteField">Usuń</button>
+        <button id="addField" class="button">Dodaj</button>
+        <button id="editField" class="button">Edytuj</button>
+        <button id="deleteField" class="button">Usuń</button>
     </ul>
     <ul id="machines">
         <h3>Maszyny</h3>
-        <button id="addMachine">Dodaj</button>
-        <button id="editMachine">Edytuj</button>
-        <button id="deleteMachine">Usuń</button>
+        <button id="addMachine" class="button">Dodaj</button>
+        <button id="editMachine" class="button">Edytuj</button>
+        <button id="deleteMachine" class="button">Usuń</button>
     </ul>
 </body>
