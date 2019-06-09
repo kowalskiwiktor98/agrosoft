@@ -1,6 +1,7 @@
 window.onload = function () {
     getMessages();
     displayinboxchat();
+    prepareButtons();
 };
 
 function getMessages() {
@@ -37,4 +38,19 @@ function displayinboxchat() {
         li.appendChild(a);
         document.getElementById("mailbox").appendChild(li);
     }
+}
+
+function prepareButtons() {
+    document.getElementById("sendMessages").onclick = function () { sendMessages() };
+    document.getElementById("deleteMessages").onclick = function () { deleteMessages() };
+
+}
+
+function sendMessages() {
+    console.log("send messages");
+    window.location.href = '/Form/SendMessage.html';
+}
+function deleteMessages() {
+    console.log("delete messages");
+    window.location.href = '/Form/DeleteMessage.html';
 }

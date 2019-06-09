@@ -1,8 +1,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
+<script src="../script/SendMessage.js"></script>
+
 <body>
-
-
     <div class="container">
         <div class="row">
             <div class="panel panel-default">
@@ -11,10 +11,13 @@
                 </div>
                 <div class="panel-body">
                     <form role="form" class="form-horizontal">
-                        <div class="form-group">
-                            <label class="col-sm-2" for="inputTo">To</label>
-                            <div class="col-sm-10"><input type="email" class="form-control" id="inputTo"
-                                    placeholder="comma separated list of recipients"></div>
+                        <div class="dropdown">
+                            <button onclick="myFunction()" class="dropbtn">Dodaj odbiorcę</button>
+                            <div id="myDropdown" class="dropdown-content">
+                                <a href="#">Link 1</a>
+                                <a href="#">Link 2</a>
+                                <a href="#">Link 3</a>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2" for="inputSubject">Subject</label>
@@ -33,7 +36,8 @@
                                             style="display:inline-block;line-height:26.6667px;color:transparent;overflow:hidden;text-align:left;float:initial;clear:none;box-sizing:border-box;vertical-align:baseline;white-space:pre-wrap;width:100%;margin:0;padding:0;border:0;font:normal normal normal normal 14px / 26.6667px 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:14px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;letter-spacing:normal;text-shadow:none;height:225px;"
                                             data-grammarly-reactid=".2.0"></span><br data-grammarly-reactid=".2.1">
                                     </div>
-                                </ghost><textarea class="form-control" id="inputBody" rows="8" data-gramm="true"
+                                </ghost>
+                                <textarea class="form-control" id="inputBody" rows="8" data-gramm="true"
                                     data-txt_gramm_id="71c8bb8e-8a51-c867-6c4f-5b14b864ac06"
                                     data-gramm_id="71c8bb8e-8a51-c867-6c4f-5b14b864ac06" spellcheck="false"
                                     data-gramm_editor="true"
@@ -47,6 +51,8 @@
                                 </div>
                             </div>
                         </div>
+                        <button id="send">Wyślij</button>
+                        <button id="clear">Wyczyść</button>
                     </form>
                 </div>
             </div>
