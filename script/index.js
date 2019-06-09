@@ -23,7 +23,8 @@ async function zaloguj() {
 
         localStorage.setItem('token', accessToken);
         localStorage.setItem('tokenType', tokenType);
-        window.location.pathname = "main.html"
+        //window.location.pathname = "agrosoft/main.html"
+        window.location.replace(window.location.pathname + "main.html")
 
     } catch (e) {
         console.error(e);
