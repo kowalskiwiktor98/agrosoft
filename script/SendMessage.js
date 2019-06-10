@@ -4,6 +4,7 @@ window.onload = function () {
 
 function dropdown() {
     document.getElementById("Dropdown").classList.toggle("show");
+    console.log("dropdown");
 }
 
 function filterFunction() {
