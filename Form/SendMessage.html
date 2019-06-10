@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
 <script src="../script/SendMessage.js"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
 <body>
     <div class="container">
@@ -14,9 +14,9 @@
                     <form role="form" class="form-horizontal">
                 </div>
                 <div>
-                    <label for="inputSubject" id="">Odbiorca</label>
-                    <select>
-                        <option value="null"></option>
+                    <label for="inputSubject">Odbiorca</label>
+                    <select id="dropdown">
+                        <option value=""></option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -51,8 +51,8 @@
                         </div>
                     </div>
                 </div>
-                <button id="send">Wyślij</button>
-                <button id="clear">Wyczyść</button>
+                <button id="send" onclick="sendMessage()">Wyślij</button>
+                <button id="clear" onclick="clearForm()">Wyczyść</button>
                 </form>
             </div>
         </div>

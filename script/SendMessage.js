@@ -1,24 +1,73 @@
 window.onload = function () {
-
+    filldropdown();
 };
 
-function dropdown() {
-    document.getElementById("Dropdown").classList.toggle("show");
-    console.log("dropdown");
+function filldropdown() {
+    var users = JSON.parse(localStorage.getItem('users'));
+    //console.log(users);
+    var dropdown = document.getElementById('dropdown');
+    for (u of users) {
+        var option = document.createElement('option');
+        var select = document.createTextNode(u.first_name + ' ' + u.last_name);
+        option.setAttribute("value", u.user_id);
+        option.appendChild(select);
+        dropdown.appendChild(option);
+    }
 }
 
-function filterFunction() {
-    var input, filter, ul, li, a, i;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    div = document.getElementById("Dropdown");
-    a = div.getElementsByTagName("a");
-    for (i = 0; i < a.length; i++) {
-        txtValue = a[i].textContent || a[i].innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            a[i].style.display = "";
-        } else {
-            a[i].style.display = "none";
-        }
+function sendMessage() {
+    var dropdown = document.getElementById('dropdown');
+    var selected = dropdown.options[dropdown.selectedIndex].value;
+    var subject = document.getElementById("inputSubject").value;
+    var message = document.getElementById("inputBody").value
+    console.log(selected);
+    console.log(subject);
+    console.log(message);
+    var body = {
+        recipient_id: selected,
+        subject: subject,
+        body: message
     }
+    postMessage(body);
+}
+function clearForm() {
+
+}
+
+// function postMessage(body) {
+//     $.ajax({
+//         type: 'POST',
+//         url: 'https://mikey.ovh/restAPI/api/messages',
+//         data: JSON.stringify(body),
+//         dataType: 'json',
+//         contentType: 'application/json',
+//         beforeSend: xhr => {
+//             xhr.setRequestHeader("Authorization", `Bearer ${localStorage.getItem('token')}`);
+//         },
+//         error: e => {
+//             console.error(new Error(e));
+//         },
+//         success: response => {
+//             console.log(response);
+//         }
+//     });
+// }
+
+function postMessage(body) {
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://mikey.ovh/restAPI/api/messages",
+        "method": "POST",
+        "headers": {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer " + localStorage.getItem('token')
+        },
+        "processData": false,
+        "data": JSON.stringify(body)
+    }
+
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+    });
 }
