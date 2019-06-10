@@ -28,5 +28,8 @@ function update() {
     document.getElementById('firstname').value = user.first_name;
     document.getElementById('lastname').value = user.last_name;
     document.getElementById('username').value = user.username;
+}
+
+function submit() {
 
 }

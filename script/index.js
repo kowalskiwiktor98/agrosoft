@@ -19,6 +19,7 @@ function zaloguj() {
         success: response => {
             localStorage.setItem('token', response.accessToken);
             localStorage.setItem('tokenType', response.tokenType);
+            console.log(response.accessToken);
             window.location.href = 'main.html';
         }
     });
