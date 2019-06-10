@@ -1,36 +1,25 @@
-
 document.getElementById("loginbtn").onclick = zaloguj;
 
-var accessToken;
-var tokenType;
-
-async function zaloguj() {
+function zaloguj() {
     const username = document.getElementById('login').value;
     const password = document.getElementById('password').value;
 
-    try {
-        console.log(username);
-        console.log(password);
-        const response = await axios.post('https://mikey.ovh/restAPI/api/auth/signin', {
+    $.ajax({
+        type: 'POST',
+        url: 'https://mikey.ovh/restAPI/api/auth/signin',
+        data: JSON.stringify({
             username,
-            password
-        });
-        //console.log(response);
-        accessToken = response.data.accessToken;
-        tokenType = response.data.tokenType;
-        console.log(accessToken);
-        console.log(tokenType);
-
-        localStorage.setItem('token', accessToken);
-        localStorage.setItem('tokenType', tokenType);
-        //window.location.pathname = "agrosoft/main.html"
-        //console.log(window.location.pathname);
-        window.location.href = 'main.html';
-
-    } catch (e) {
-        console.error(e);
-    }
-
-
-
+            password,
+        }),
+        dataType: 'json',
+        contentType: 'application/json',
+        error: e => {
+            console.error(new Error(e));
+        },
+        success: response => {
+            localStorage.setItem('token', response.accessToken);
+            localStorage.setItem('tokenType', response.tokenType);
+            window.location.href = 'main.html';
+        }
+    });
 }
