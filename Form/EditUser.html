@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<body onload="filldropdown()">
+
+    <h2>Edytuj użytkownika</h2>
+    <div>
+        <label for="inputSubject">Użytkownik: </label>
+        <select id="dropdown" onchange="update(this)">
+            <option value="none">Wybierz</option>
+        </select>
+    </div>
+    <form>
+        Imie:<br>
+        <input type="text" id="firstname" value="">
+        <br>
+        Nazwisko:<br>
+        <input type="text" id="lastname" value="">
+        <br>
+        Login:<br>
+        <input type="text" id="username" value="">
+        <br><br>
+        <input type="submit" value="Submit" onclick="submit()">
+    </form>
+
+
+</body>
+
+<script src="../script/EditUser.js"></script>
+
+</html>
