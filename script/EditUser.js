@@ -1,9 +1,12 @@
-
+window.onload = function () {
+    document.getElementById('submit').onclick = function () { submit() }
+    filldropdown();
+}
 
 
 function filldropdown() {
     var users = JSON.parse(localStorage.getItem('users'));
-    //console.log(users);
+    console.log('filldropdown');
     var dropdown = document.getElementById('dropdown');
     for (u of users) {
         var option = document.createElement('option');
@@ -31,6 +34,7 @@ function update() {
 }
 
 function submit() {
+    console.log('submit');
     var dropdown = document.getElementById('dropdown');
     var selected = dropdown.options[dropdown.selectedIndex].value;
     //console.log(selected);
@@ -57,8 +61,9 @@ function submit() {
         "processData": false,
         "data": JSON.stringify(body)
     }
-
+    console.log(JSON.parse(settings));
     $.ajax(settings).done(function (response) {
         console.log(response);
     });
 }
+
