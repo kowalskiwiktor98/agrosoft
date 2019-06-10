@@ -34,21 +34,21 @@ function clearForm() {
 
 }
 
-async function postMessage(body) {
-    var settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": "https://mikey.ovh/restAPI/api/messages",
-        "method": "POST",
-        "headers": {
-            "Content-Type": "application/json",
-            "Authorization": "Bearer " + localStorage.getItem('token')
+function postMessage(body) {
+    $.ajax({
+        type: 'POST',
+        url: 'https://mikey.ovh/restAPI/api/messages',
+        data: JSON.stringify(body),
+        dataType: 'json',
+        contentType: 'application/json',
+        beforeSend: xhr => {
+            xhr.setRequestHeader("Authorization", `Bearer ${localStorage.getItem('token')}`);
         },
-        "processData": false,
-        "data": JSON.stringify(body)
-    }
-    $.ajax(settings).done(function (response) {
-        console.log("attempt to POST");
-        console.log(response);
+        error: e => {
+            console.error(new Error(e));
+        },
+        success: response => {
+            console.log(response);
+        }
     });
 }
