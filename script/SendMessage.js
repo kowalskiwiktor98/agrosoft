@@ -24,9 +24,9 @@ function sendMessage() {
     console.log(subject);
     console.log(message);
     var body = {
-        recipient_id: selected,
-        subject: subject,
-        body: message
+        "recipient_id": selected,
+        "subject": subject,
+        "body": message
     }
     postMessage(body);
 }
@@ -35,7 +35,7 @@ function clearForm() {
 }
 
 
-function postMessage(body) {
+async function postMessage(body) {
     var settings = {
         "async": true,
         "crossDomain": true,
