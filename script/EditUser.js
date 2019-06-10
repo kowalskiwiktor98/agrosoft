@@ -43,27 +43,24 @@ function submit() {
     var user = users.find(user => user.user_id == selected);
     //console.log('Wybrany użytkownik: ' + user);
     var body = {
-
         "first_name": document.getElementById('firstname').value,
         "last_name": document.getElementById('lastname').value,
         "username": document.getElementById('username').value
-
     }
     var settings = {
-        "async": true,
-        "crossDomain": true,
         "url": "https://mikey.ovh/restAPI/api/users/" + selected,
         "method": "PATCH",
         "headers": {
             "Content-Type": "application/json",
             "Authorization": "Bearer " + localStorage.getItem('token')
         },
-        "processData": false,
         "data": JSON.stringify(body)
     }
     console.log(JSON.parse(settings));
     $.ajax(settings).done(function (response) {
         console.log(response);
     });
+    console.log('redirect');
+    window.location.href = '/Manage.html'
 }
 
