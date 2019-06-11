@@ -1,8 +1,8 @@
-window.onload = function () {
+$(document).ready(function () {
     getOverview();
-};
+});
 
-async function getOverview() {
+function getOverview() {
     getSilos();
     getFields();
     getMachines();
@@ -10,7 +10,7 @@ async function getOverview() {
     prepareButtons();
 }
 
-async function getSilos() {
+function getSilos() {
     var settings = {
         "async": true,
         "crossDomain": true,
@@ -27,7 +27,7 @@ async function getSilos() {
     });
 
 }
-async function getFields() {
+function getFields() {
     var settings = {
         "async": true,
         "crossDomain": true,
@@ -44,7 +44,7 @@ async function getFields() {
     });
 
 }
-async function getMachines() {
+function getMachines() {
     var settings = {
         "async": true,
         "crossDomain": true,
@@ -71,6 +71,7 @@ function displayAll() {
             ", Pojemność: " + s.capacity +
             ", Zapełnienie: " + s.fill_level);
         silosList.append(t);
+        silosList.classList.add('list-group-item');
         document.getElementById("silos").appendChild(silosList);
     }
     for (f of fields) {
@@ -78,14 +79,16 @@ function displayAll() {
         var t = document.createTextNode("Powierzchnia: " + f.area +
             ", Zawartość: " + f.crop +
             ", Status: " + f.status);
-        silosList.appendChild(t);
+        fieldsList.classList.add('list-group-item');
+        fieldsList.appendChild(t);
     }
     for (m of machines) {
         var machinesList = document.createElement("li");
         var t = document.createTextNode("Marka: " + m.brand +
             ", Model: " + m.model +
             ", Miesięczna rata: " + m.monthly_instalment);
-        silosList.appendChild(t);
+        machinesList.classList.add('list-group-item');
+        machinesList.appendChild(t);
     }
 }
 function prepareButtons() {

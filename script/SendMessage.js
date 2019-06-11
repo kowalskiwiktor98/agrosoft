@@ -1,6 +1,6 @@
-window.onload = function () {
+$(document).ready(function () {
     filldropdown();
-};
+});
 
 function filldropdown() {
     var users = JSON.parse(localStorage.getItem('users'));
@@ -35,7 +35,7 @@ function clearForm() {
 }
 
 
-async function postMessage(body) {
+function postMessage(body) {
     var settings = {
         "async": true,
         "crossDomain": true,

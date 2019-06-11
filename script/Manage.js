@@ -1,5 +1,11 @@
+$(document).ready(function () {
+    document.getElementById("addUser").onclick = function () { addUser() };
+    document.getElementById("editUser").onclick = function () { editUser() };
+    document.getElementById("deleteUser").onclick = function () { deleteUser() };
+    getUsers();
+});
 
-async function getUsers() {
+function getUsers() {
     var settings = {
         "async": true,
         "crossDomain": true,
@@ -26,15 +32,12 @@ function displayUsers() {
         console.log(user);
         var li = document.createElement("li");
         var t = document.createTextNode(user.first_name + ' ' + user.last_name);
+        li.classList.add("list-group-item")
         li.appendChild(t);
         document.getElementById("userList").appendChild(li);
 
     }
 }
-
-document.getElementById("addUser").onclick = function () { addUser() };
-document.getElementById("editUser").onclick = function () { editUser() };
-document.getElementById("deleteUser").onclick = function () { deleteUser() };
 
 function addUser() {
     console.log("addUser");

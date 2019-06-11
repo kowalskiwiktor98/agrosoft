@@ -1,4 +1,6 @@
-document.getElementById("loginbtn").onclick = zaloguj;
+$(document).ready(function () {
+    document.getElementById("loginbtn").onclick = zaloguj;
+});
 
 function zaloguj() {
     const username = document.getElementById('login').value;
