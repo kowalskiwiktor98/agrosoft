@@ -43,9 +43,7 @@ function addUser() {
     console.log("addUser");
 }
 function editUser() {
-    console.log(window.location.href);
     console.log("editUser");
-    //.window.location.href = '/Form/EditUser.html';
 }
 function deleteUser() {
     console.log("deleteUser");

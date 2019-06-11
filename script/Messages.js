@@ -23,6 +23,7 @@ function getMessages() {
 function displayinboxchat() {
     var messages = JSON.parse(localStorage.getItem('messages'));
     console.log(messages);
+    messages.reverse();
     for (m of messages) {
         var li = document.createElement("li");
         var a = document.createElement("a");
