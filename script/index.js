@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    localStorage.clear();
     document.getElementById("loginbtn").onclick = zaloguj;
 });
 
