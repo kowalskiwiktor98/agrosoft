@@ -1,7 +1,8 @@
-window.onload = function () {
-    document.getElementById('submit').onclick = function () { submit() }
+$(document).ready(function () {
+    document.getElementById('submit').onclick = submit;
     filldropdown();
-}
+    document.getElementById('dropdown').onchange = update;
+});
 
 
 function filldropdown() {
@@ -16,8 +17,6 @@ function filldropdown() {
         dropdown.appendChild(option);
     }
 }
-
-document.getElementById('dropdown').onchange = function () { update() }
 
 function update() {
     //console.log('lul');
@@ -48,15 +47,14 @@ function submit() {
         "username": document.getElementById('username').value
     }
     var settings = {
-        "url": "https://mikey.ovh/restAPI/api/users/" + selected,
-        "method": "PATCH",
-        "headers": {
+        url: "https://mikey.ovh/restAPI/api/users/" + selected,
+        method: "PATCH",
+        headers: {
             "Content-Type": "application/json",
             "Authorization": "Bearer " + localStorage.getItem('token')
         },
-        "data": JSON.stringify(body)
+        data: JSON.stringify(body)
     }
-    console.log(JSON.parse(settings));
     $.ajax(settings).done(function (response) {
         console.log(response);
     });

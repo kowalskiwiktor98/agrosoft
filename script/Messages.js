@@ -1,8 +1,8 @@
-window.onload = function () {
+$(document).ready(function () {
     getMessages();
     displayinboxchat();
     prepareButtons();
-};
+});
 
 function getMessages() {
     var settings = {
