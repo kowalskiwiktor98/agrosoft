@@ -1,5 +1,9 @@
+var messages;
+
 $(document).ready(function () {
     getMessages();
+    messages = JSON.parse(localStorage.getItem('messages'));
+    messages.reverse();
     displayinboxchat();
     prepareButtons();
 });
@@ -21,9 +25,11 @@ function getMessages() {
     });
 }
 function displayinboxchat() {
-    var messages = JSON.parse(localStorage.getItem('messages'));
     console.log(messages);
-    messages.reverse();
+    document.getElementById("mailbox").innerHTML = '';
+    for (child of document.getElementById("mailbox").children) {
+        child.value = '';
+    }
     for (m of messages) {
         var li = document.createElement("li");
         var a = document.createElement("a");
@@ -54,4 +60,11 @@ function sendMessages() {
 function deleteMessages() {
     console.log("delete messages");
     window.location.href = './Form/DeleteMessage.html';
+}
+
+function filterMessages() {
+    messages = JSON.parse(localStorage.getItem('messages'));
+    console.log(document.getElementById('mailsearch').value);
+    messages = messages.filter(messages => messages.message.body.includes(document.getElementById('mailsearch').value))
+    displayinboxchat();
 }

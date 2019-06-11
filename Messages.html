@@ -47,8 +47,8 @@
                             <button id="deleteMessages" class="btn btn-danger">Usuń Wiadomości</button>
                         </div>
                         <hr>
-                        <input type="search" placeholder="Search Mail" class="form-control mail-search"
-                            id="mailsearch" />
+                        <input type="search" placeholder="Search Mail" class="form-control mail-search" id="mailsearch"
+                            onkeyup="filterMessages()" />
                         <hr>
                         <ul class="mail-list" id="mailbox">
                         </ul>
