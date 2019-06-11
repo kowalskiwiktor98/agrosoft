@@ -7,7 +7,7 @@ function getOverview() {
     getFields();
     getMachines();
     displayAll();
-    prepareButtons();
+    //prepareButtons();
 }
 
 function getSilos() {
@@ -79,16 +79,18 @@ function displayAll() {
         var t = document.createTextNode("Powierzchnia: " + f.area +
             ", Zawartość: " + f.crop +
             ", Status: " + f.status);
+        fieldsList.append(t);
         fieldsList.classList.add('list-group-item');
-        fieldsList.appendChild(t);
+        document.getElementById("fields").appendChild(fieldsList);
     }
     for (m of machines) {
         var machinesList = document.createElement("li");
         var t = document.createTextNode("Marka: " + m.brand +
             ", Model: " + m.model +
             ", Miesięczna rata: " + m.monthly_instalment);
+        machinesList.append(t);
         machinesList.classList.add('list-group-item');
-        machinesList.appendChild(t);
+        document.getElementById("machines").appendChild(machinesList);
     }
 }
 function prepareButtons() {
