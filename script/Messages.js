@@ -30,9 +30,9 @@ function displayinboxchat() {
         var sender = document.createElement("span");
         var subject = document.createElement("span");
         var text = document.createElement("span");
-        sender.appendChild(document.createTextNode(m.message.creator.first_name + ' ' + m.message.creator.last_name))
-        subject.appendChild(document.createTextNode(m.message.subject));
-        text.appendChild(document.createTextNode(m.message.body));
+        sender.appendChild(document.createTextNode("Nadawca: " + m.message.creator.first_name + ' ' + m.message.creator.last_name))
+        subject.appendChild(document.createTextNode("Temat: " + m.message.subject));
+        text.appendChild(document.createTextNode("Treść: " + m.message.body));
         a.appendChild(sender);
         a.appendChild(subject);
         a.appendChild(text);
