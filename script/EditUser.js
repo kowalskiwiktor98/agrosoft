@@ -6,12 +6,12 @@ $(document).ready(function () {
 
 
 function filldropdown() {
-    var users = JSON.parse(localStorage.getItem('users'));
+    let users = JSON.parse(localStorage.getItem('users'));
     console.log('filldropdown');
-    var dropdown = document.getElementById('dropdown');
+    let dropdown = document.getElementById('dropdown');
     for (u of users) {
-        var option = document.createElement('option');
-        var select = document.createTextNode(u.first_name + ' ' + u.last_name);
+        let option = document.createElement('option');
+        let select = document.createTextNode(u.first_name + ' ' + u.last_name);
         option.setAttribute("value", u.user_id);
         option.appendChild(select);
         dropdown.appendChild(option);
@@ -20,12 +20,12 @@ function filldropdown() {
 
 function update() {
     //console.log('lul');
-    var dropdown = document.getElementById('dropdown');
-    var selected = dropdown.options[dropdown.selectedIndex].value;
+    let dropdown = document.getElementById('dropdown');
+    let selected = dropdown.options[dropdown.selectedIndex].value;
     console.log(selected);
-    var users = JSON.parse(localStorage.getItem('users'));
+    let users = JSON.parse(localStorage.getItem('users'));
     console.log(users);
-    var user = users.find(user => user.user_id == selected);
+    let user = users.find(user => user.user_id == selected);
     console.log('Wybrany użytkownik: ' + user);
     document.getElementById('firstname').value = user.first_name;
     document.getElementById('lastname').value = user.last_name;
@@ -34,19 +34,19 @@ function update() {
 
 function submit() {
     console.log('submit');
-    var dropdown = document.getElementById('dropdown');
-    var selected = dropdown.options[dropdown.selectedIndex].value;
+    let dropdown = document.getElementById('dropdown');
+    let selected = dropdown.options[dropdown.selectedIndex].value;
     //console.log(selected);
-    var users = JSON.parse(localStorage.getItem('users'));
+    let users = JSON.parse(localStorage.getItem('users'));
     //console.log(users);
-    var user = users.find(user => user.user_id == selected);
+    let user = users.find(user => user.user_id == selected);
     //console.log('Wybrany użytkownik: ' + user);
-    var body = {
-        "first_name": document.getElementById('firstname').value,
-        "last_name": document.getElementById('lastname').value,
-        "username": document.getElementById('username').value
+    let body = {
+        first_name: document.getElementById('firstname').value,
+        last_name: document.getElementById('lastname').value,
+        username: document.getElementById('username').value
     }
-    var settings = {
+    let settings = {
         url: "https://mikey.ovh/restAPI/api/users/" + selected,
         method: "PATCH",
         headers: {
@@ -55,10 +55,11 @@ function submit() {
         },
         data: JSON.stringify(body)
     }
+    console.log(settings.data)
     $.ajax(settings).done(function (response) {
         console.log(response);
+        console.log('redirect');
+        window.location.href = '../../Manage.html'
     });
-    console.log('redirect');
-    window.location.href = '/Manage.html'
 }
 

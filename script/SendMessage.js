@@ -51,5 +51,7 @@ function postMessage(body) {
 
     $.ajax(settings).done(function (response) {
         console.log(response);
+        console.log('redirect');
+        window.location.href = '../Messages.html'
     });
 }
