@@ -9,7 +9,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="css/Messages.css">
   <title>Usuń wiadomość</title>
 </head>
 
@@ -17,6 +17,30 @@
   <div class="container">
     <h2>Usuń wiadomość</h2>
     <hr>
+  </div>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="inbox">
+
+      <div class="container">
+        <div class="content-container clearfix">
+          <div class="col-md-12">
+            <h1 class="content-title">Wiadomości</h1>
+            <div style="text-align: center">
+              <button id="sendMessages" class="btn btn-primary">Wyślij Wiadomość</button>
+              <button id="deleteMessages" class="btn btn-danger">Usuń Wiadomości</button>
+            </div>
+            <hr>
+            <input type="search" placeholder="Search Mail" class="form-control mail-search" id="mailsearch" />
+            <hr>
+            <ul class="mail-list" id="mailbox">
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 
   <!-- Optional JavaScript -->
@@ -29,7 +53,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-  <script src="../script/EditUser.js"></script>
+  <script src="../script/DeleteMessage.js"></script>
 </body>
 
 </html>
