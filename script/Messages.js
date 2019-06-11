@@ -48,9 +48,9 @@ function prepareButtons() {
 
 function sendMessages() {
     console.log("send messages");
-    window.location.href = '/Form/SendMessage.html';
+    window.location.href = './Form/SendMessage.html';
 }
 function deleteMessages() {
     console.log("delete messages");
-    window.location.href = '/Form/DeleteMessage.html';
+    window.location.href = './Form/DeleteMessage.html';
 }

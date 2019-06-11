@@ -59,7 +59,7 @@ function submit() {
     $.ajax(settings).done(function (response) {
         console.log(response);
         console.log('redirect');
-        window.location.href = '../../Manage.html'
+        window.location.href = '../Manage.html'
     });
 }
 
